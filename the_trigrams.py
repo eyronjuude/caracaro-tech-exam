@@ -1,12 +1,30 @@
 if __name__ == '__main__':
-    raw_doc = input()
-    tokens = raw_doc.split()
-    trigrams = [
-        f'{tokens[i].lower()} {tokens[i+1].lower()} {tokens[i+2].lower()}' for i in range(len(tokens)-2)]
+    inputs = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        inputs.append(line)
+    raw_doc = '\n'.join(inputs)
+    sentences = raw_doc.lower().replace('. ', '.').split('.')[:-1]
+    trigrams = []
     frequencies = {}
-    for i in trigrams:
-        if i in frequencies:
-            frequencies[i] += 1
+    for sentence in sentences:
+        tokens = sentence.split()
+        if len(tokens) < 3:
+            continue
+        for i in range(len(tokens)-2):
+            trigrams.append(' '.join(tokens[i:i+3]))
+    for trigram in trigrams:
+        if trigram in frequencies:
+            frequencies[trigram] += 1
         else:
-            frequencies[i] = 1
-    print(max(frequencies, key=frequencies.get))
+            frequencies[trigram] = 1
+    the_trigram = ''
+    max_count = -1
+    for trigram in trigrams:
+        if frequencies[trigram] > max_count:
+            the_trigram = trigram
+            max_count = frequencies[trigram]
+    print(the_trigram)
