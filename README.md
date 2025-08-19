@@ -25,7 +25,11 @@ Technical exam submission repository for admission at CaraCaro. Includes instruc
 
 1. `the_trigram.py`
 
-    Terminal input: `python3 the_trigram.py < input.txt`
+    Terminal input:
+
+    ```txt
+    python3 the_trigram.py < input.txt
+    ```
 
     Input file (`input.txt`) contents:
 
@@ -41,7 +45,11 @@ Technical exam submission repository for admission at CaraCaro. Includes instruc
 
 2. `expand_the_acronyms.py`
 
-    Terminal input: `python3 expand_the_acronyms.py < input.txt`
+    Terminal input:
+
+    ```txt
+    python3 expand_the_acronyms.py < input.txt
+    ```
 
     Input file (`input.txt`) contents:
 
