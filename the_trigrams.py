@@ -1,4 +1,4 @@
-if __name__ == '__main__':
+def main():
     inputs = []
     while True:
         try:
@@ -28,3 +28,7 @@ if __name__ == '__main__':
             the_trigram = trigram
             max_count = frequencies[trigram]
     print(the_trigram)
+
+
+if __name__ == '__main__':
+    main()
